@@ -12,15 +12,6 @@ d3.json("./br/250gc.json", function(error, br) {
   if (error) throw error;
   
   svg.append("path")
-      .attr("stroke", "#aaa")
-      .attr("stroke-width", 0.5)
-      .attr("d", path(topojson.mesh(br, br.objects.counties, function(a, b) { return a !== b; })));
-
-  svg.append("path")
-      .attr("stroke-width", 0.5)
-      .attr("d", path(topojson.mesh(br, br.objects.states, function(a, b) { return a !== b; })));
-
-  svg.append("path")
       .attr("d", path(topojson.feature(br, br.objects.nation)));
 });
 
